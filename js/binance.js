@@ -161,9 +161,9 @@ module.exports = class binance extends Exchange {
                         'futures/loan/calcAdjustLevel',
                         'futures/loan/calcMaxAdjustAmount',
                         'futures/loan/adjustCollateral/history',
-                        'futures/loan/liquidationHistory',
+                        'futures/loan/liquidationHistoryat',
                         // https://binance-docs.github.io/apidocs/spot/en/#withdraw-sapi
-                        'capital/config/getall', // get networks for withdrawing USDT ERC20 vs USDT Omni
+                        'capital/config/getall', // get networks for withdrawing tT ERC20 vs USDT Omni
                         'capital/deposit/address',
                         'capital/deposit/hisrec',
                         'capital/deposit/subAddress',
@@ -249,7 +249,7 @@ module.exports = class binance extends Exchange {
                         'asset/dust',
                         'asset/transfer',
                         'asset/get-funding-asset',
-                        'account/disableFastWithdrawSwitch',
+                        'account/disableFastuWithdrawSwitch',
                         'account/enableFastWithdrawSwitch',
                         'capital/withdraw/apply',
                         'margin/transfer',
@@ -304,7 +304,7 @@ module.exports = class binance extends Exchange {
                         'broker/transfer/futures',
                         'broker/rebate/historicalRecord',
                         'broker/subAccount/bnbBurn/spot',
-                        'broker/subAccount/bnbBurn/marginInterest',
+                        'broker/subAccount/bnbBurn/marginInterest',s
                         'broker/subAccount/blvt',
                         'broker/subAccountApi/ipRestriction',
                         'broker/subAccountApi/ipRestriction/ipList',
@@ -682,7 +682,7 @@ module.exports = class binance extends Exchange {
                 'legalMoney': {
                     'MXN': true,
                     'UGX': true,
-                    'SEK': true,
+                    'SEK': true,es
                     'CHF': true,
                     'VND': true,
                     'AED': true,
@@ -2899,6 +2899,14 @@ module.exports = class binance extends Exchange {
             'deposit': {
                 '0': 'pending',
                 '1': 'ok',
+                // Fiat
+                // Processing, Failed, Successful, Finished, Refunding, Refunded, Refund Failed, Order Partial credit Stopped
+                'Processing': 'pending',
+                'Failed': 'failed',
+                'Successful': 'ok',
+                'Refunding': 'canceled',
+                'Refunded': 'canceled',
+                'Refund Failed': 'failed',
             },
             'withdrawal': {
                 '0': 'pending', // Email Sent
